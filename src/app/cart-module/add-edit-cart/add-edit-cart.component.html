@@ -1,0 +1,36 @@
+<div class="container mt-2">
+  <div class="btn-end mt-2 col-12">
+    <div class="ms-2">
+      <a routerLink="/cart/cart-list" class="btn primary-btn btn-sm br-12 py-2">
+        <img src="../../../assets/arrow-left-solid.svg" />
+        <span> Back to List </span>
+      </a>
+    </div>
+  </div>
+  <form [formGroup]="addItemForm" (ngSubmit)="addItem()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Item Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        formControlName="item_name"
+        name="item_name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Item Price</label>
+      <div class="text">
+        <input
+          type="number"
+          formControlName="item_price"
+          name="item_price"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

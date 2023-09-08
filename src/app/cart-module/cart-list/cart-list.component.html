@@ -1,0 +1,50 @@
+<div class="btn-end mt-2 col-12">
+  <div class="ms-2">
+    <a
+      routerLink="/cart/add-edit-item"
+      class="btn primary-btn btn-sm br-12 py-2"
+    >
+      + <span> Add Item </span>
+    </a>
+  </div>
+</div>
+<div class="table-responsive listing-table bg-white br-12 p-2">
+  <table class="table mb-0 p-1">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="cartList.length > 0; else noRecords">
+        <tr *ngFor="let user of cartList; let i = index">
+          <!-- <th scope="row">1</th> -->
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.item_name }}</td>
+          <td>₹ {{ user.item_price }}</td>
+          <td class="action-class">
+            <a
+              ><img
+                src="../../../assets/edit-regular.svg"
+                (click)="editItem(i)"
+            /></a>
+            <a
+              ><img
+                src="../../../assets/trash-alt-regular.svg"
+                (click)="deleteItem(i)"
+                class="ms-3"
+            /></a>
+          </td>
+        </tr>
+      </ng-container>
+      <ng-template #noRecords>
+        <tr class="text-center">
+          <td colspan="10">No records found</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+</div>

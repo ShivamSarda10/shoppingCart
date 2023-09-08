@@ -1,0 +1,40 @@
+.btn-end {
+  display: flex;
+  justify-content: flex-start;
+}
+
+img {
+  overflow: hidden;
+  width: 20px;
+  height: 20px;
+}
+
+.primary-btn {
+  color: #fff;
+  background-color: #2f779c;
+  border: 1px solid transparent;
+  transition: 0.3s all ease-in-out;
+
+  &:hover {
+    color: #2f779c;
+    background-color: transparent;
+    border: 1px solid rgba(47, 119, 156, 0.5);
+  }
+}
+
+div.text {
+  position: relative;
+}
+
+div.text input {
+  padding-left: 25px;
+}
+
+div.text:after {
+  position: absolute;
+  left: 9px;
+  top: 6px;
+  font-size: 15px;
+  content: "₹";
+  color: #000;
+}
