@@ -44,12 +44,14 @@ export class AddEditCartComponent implements OnInit {
 
   addItem() {
     if (this.itemId) {
-      this.cartList.splice(this.itemId, 1)
-      let filledData: any = {
-        item_name: this.addItemForm.controls['item_name'].value,
-        item_price: this.addItemForm.controls['item_price'].value
-      }
-      this.cartList.push(filledData)
+      // this.cartList.splice(this.itemId, 1)
+      // let filledData: any = {
+      //   item_name: this.addItemForm.controls['item_name'].value,
+      //   item_price: this.addItemForm.controls['item_price'].value
+      // }
+      // this.cartList.push(filledData)
+      this.cartList[this.itemId].item_name = this.addItemForm.controls['item_name'].value
+      this.cartList[this.itemId].item_price = this.addItemForm.controls['item_price'].value
       localStorage.setItem('cartList', JSON.stringify(this.cartList))
       this.addItemForm.reset()
       this._router.navigate(['/cart/cart-list'])
